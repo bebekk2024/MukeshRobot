@@ -10,11 +10,11 @@ from telethon import __version__ as tver
 from MukeshRobot import SUPPORT_CHAT, pbot,BOT_USERNAME, OWNER_ID,BOT_NAME,START_IMG
 
 PHOTO = [
-    "https://telegra.ph//file/04028a5c74d51feb92ba2.jpg",
-    "https://telegra.ph//file/04028a5c74d51feb92ba2.jpg",
-    "https://telegra.ph//file/04028a5c74d51feb92ba2.jpg",
-    "https://telegra.ph//file/04028a5c74d51feb92ba2.jpg",
-    "https://telegra.ph//file/04028a5c74d51feb92ba2.jpg",
+    "https://telegra.ph//file/7427929e1e589ed76e183.jpg",
+    "https://telegra.ph//file/7427929e1e589ed76e183.jpg",
+    "https://telegra.ph//file/7427929e1e589ed76e183.jpg",
+    "https://telegra.ph//file/7427929e1e589ed76e183.jpg",
+    "https://telegra.ph//file/7427929e1e589ed76e183.jpg",
 ]
 
 Mukesh = [
