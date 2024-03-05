@@ -23,7 +23,7 @@ Mukesh = [
         InlineKeyboardButton(text="๏ ꜱᴜᴘᴘᴏʀᴛ ๏", url=f"https://t.me/musik_supportdan"),
     ],
     [
-        InlineKeyboardButton(text="๏ ᴅᴀɴ ๏", url="https://t.me/mhmdwldnnnn"),
+        InlineKeyboardButton(text="๏ ᴡɪʟᴅᴀɴ ๏", url="https://t.me/mhmdwldnnnn"),
         InlineKeyboardButton(text="๏ ꜱᴛᴏʀᴇ ๏", url=f"https://t.me/Disney_storeDan"),
     ],
     [                         
