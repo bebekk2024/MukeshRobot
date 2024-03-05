@@ -241,7 +241,7 @@ def start(update: Update, context: CallbackContext):
     else:
         update.effective_message.reply_photo(
             START_IMG,
-            caption="ɢʀᴇᴀᴛ ɪᴅᴜᴘ ᴋᴏᴋ ᴍᴇᴋ  !\n<b>ɢᴡ ɢᴀ ᴛɪᴅᴜʀ ᴅᴀʀɪ​:</b> <code>{}</code>".format(
+            caption="ᴡɪʟᴅᴀɴ ɪᴅᴜᴘ ᴋᴏᴋ ᴍᴇᴋ  !\n<b>ɢᴡ ɢᴀ ᴛɪᴅᴜʀ ᴅᴀʀɪ​:</b> <code>{}</code>".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
@@ -392,7 +392,7 @@ def Mukesh_about_callback(update: Update, context: CallbackContext):
      ],
                     [
                         InlineKeyboardButton(
-                            text="🏓sᴜᴩᴩᴏʀᴛ", url=f"https://t.me/musicsupport_dan"
+                            text="🏓sᴜᴩᴩᴏʀᴛ", url=f"https://t.me/musik_supportdan"
                         ),
                         InlineKeyboardButton(
                             text="ᴄᴏᴍᴍᴀɴᴅs", callback_data="Main_help"
@@ -428,7 +428,7 @@ def Mukesh_about_callback(update: Update, context: CallbackContext):
      ],
                     [
                         InlineKeyboardButton(
-                            text="sᴜᴩᴩᴏʀᴛ", url=f"https://t.me/musicsupport_dan"
+                            text="sᴜᴩᴩᴏʀᴛ", url=f"https://t.me/musik_supportdan"
                         ),
                         InlineKeyboardButton(
                             text="ᴜᴩᴅᴀᴛᴇs", url=f"http://t.me/mhmdwldnnnn"
@@ -616,7 +616,7 @@ def Source_about_callback(update: Update, context: CallbackContext):
 
 
 {BOT_NAME} ɪs ʟɪᴄᴇɴsᴇᴅ ᴜɴᴅᴇʀ ᴛʜᴇ [ᴍɪᴛ ʟɪᴄᴇɴsᴇ](http://t.me/mhmdwldnnnn).
-© 2023 - 2024 | [sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ](https://t.me/musicsupport_dan), ᴀʟʟ ʀɪɢʜᴛs ʀᴇsᴇʀᴠᴇᴅ.
+© 2023 - 2024 | [sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ](https://t.me/musik_supportdan), ᴀʟʟ ʀɪɢʜᴛs ʀᴇsᴇʀᴠᴇᴅ.
 """,
             parse_mode=ParseMode.MARKDOWN,
             
@@ -1076,13 +1076,13 @@ def main():
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
             dispatcher.bot.send_photo(
-                f"@musicsupport_dan",
+                f"@musik_supportdan",
                 photo=f"https://telegra.ph//file/2c1dd1f29fca1670d134e.jpg",
                 caption=f"""
 ✨{BOT_NAME} ɪs ᴀʟɪᴠᴇ ʙᴀʙʏ.
 ━━━━━━━━━━━━━
-๏ **ᴍᴀɪɴᴛᴇɴᴀɴᴄᴇ ʙʏ :** [ᴅᴀɴ](tg://user?id=5779185981)
-๏ ** ᴅᴇᴠᴇʟᴏᴘᴇʀ :** [ᴅᴀɴ](https://t.me/mhmdwldnnnn)
+๏ **ᴍᴀɪɴᴛᴇɴᴀɴᴄᴇ ʙʏ :** [ᴡɪʟᴅᴀɴ](tg://user?id=5779185981)
+๏ ** ᴅᴇᴠᴇʟᴏᴘᴇʀ :** [ᴡɪʟᴅᴀɴ](https://t.me/mhmdwldnnnn)
 ๏ ** ꜱᴜᴘᴘᴏʀᴛ :** [ꜱᴛᴏʀᴇ](https://t.me/Disney_storeDan)
 ━━━━━━━━━━━━━
 """,reply_markup=x,
