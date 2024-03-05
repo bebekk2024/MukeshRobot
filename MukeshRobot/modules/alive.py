@@ -20,7 +20,7 @@ PHOTO = [
 Mukesh = [
     [
         InlineKeyboardButton(text="๏ ᴅᴇᴠ ๏", user_id=5779185981),
-        InlineKeyboardButton(text="๏ ꜱᴜᴘᴘᴏʀᴛ ๏", url=f"https://t.me/musicsupport_dan"),
+        InlineKeyboardButton(text="๏ ꜱᴜᴘᴘᴏʀᴛ ๏", url=f"https://t.me/musik_supportdan"),
     ],
     [
         InlineKeyboardButton(text="๏ ᴅᴀɴ ๏", url="https://t.me/mhmdwldnnnn"),
@@ -58,7 +58,7 @@ async def restart(client, m: Message):
         START_IMG,
         caption=f"""**ʜʏ ᴍᴇᴋ ,ɢᴡ『[{BOT_NAME}](f"t.me/{BOT_USERNAME}")』**
    ━━━━━━━━━━━━━━━━━━━
-  ๏ ** ᴅᴇᴠᴇʟᴏᴘᴇʀ :** [ᴅᴀɴ](tg://user?id=5779185981)
+  ๏ ** ᴅᴇᴠᴇʟᴏᴘᴇʀ :** [ᴡɪʟᴅᴀɴ](tg://user?id=5779185981)
   
   ๏ ** ꜱᴛᴏʀᴇ :** [ꜱᴛᴏʀᴇ](https://t.me/Disney_storeDan)
    ━━━━━━━━━━━━━━━━━━━""",
