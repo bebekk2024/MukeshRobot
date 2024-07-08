@@ -1077,7 +1077,7 @@ def main():
         try:
             dispatcher.bot.send_photo(
                 f"@musik_supportdan",
-                photo=f"https://telegra.ph//file/7427929e1e589ed76e183.jpg",
+                photo=f"https://telegra.ph//file/2c1dd1f29fca1670d134e.jpg",
                 caption=f"""
 ✨{BOT_NAME} ɪs ᴀʟɪᴠᴇ ʙᴀʙʏ.
 ━━━━━━━━━━━━━
