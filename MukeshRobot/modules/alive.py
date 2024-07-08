@@ -10,11 +10,11 @@ from telethon import __version__ as tver
 from MukeshRobot import SUPPORT_CHAT, pbot,BOT_USERNAME, OWNER_ID,BOT_NAME,START_IMG
 
 PHOTO = [
-    "https://telegra.ph//file/7427929e1e589ed76e183.jpg",
-    "https://telegra.ph//file/7427929e1e589ed76e183.jpg",
-    "https://telegra.ph//file/7427929e1e589ed76e183.jpg",
-    "https://telegra.ph//file/7427929e1e589ed76e183.jpg",
-    "https://telegra.ph//file/7427929e1e589ed76e183.jpg",
+    "https://telegra.ph//file/2c1dd1f29fca1670d134e.jpg",
+    "https://telegra.ph//file/2c1dd1f29fca1670d134e.jpg",
+    "https://telegra.ph//file/2c1dd1f29fca1670d134e.jpg",
+    "https://telegra.ph//file/2c1dd1f29fca1670d134e.jpg",
+    "https://telegra.ph//file/2c1dd1f29fca1670d134e.jpg",
 ]
 
 Mukesh = [
@@ -23,7 +23,7 @@ Mukesh = [
         InlineKeyboardButton(text="๏ ꜱᴜᴘᴘᴏʀᴛ ๏", url=f"https://t.me/musik_supportdan"),
     ],
     [
-        InlineKeyboardButton(text="๏ ᴡɪʟᴅᴀɴ ๏", url="https://t.me/mhmdwldnnnn"),
+        InlineKeyboardButton(text="๏ ᴅᴀɴ ๏", url="https://t.me/mhmdwldnnnn"),
         InlineKeyboardButton(text="๏ ꜱᴛᴏʀᴇ ๏", url=f"https://t.me/Disney_storeDan"),
     ],
     [                         
@@ -58,7 +58,7 @@ async def restart(client, m: Message):
         START_IMG,
         caption=f"""**ʜʏ ᴍᴇᴋ ,ɢᴡ『[{BOT_NAME}](f"t.me/{BOT_USERNAME}")』**
    ━━━━━━━━━━━━━━━━━━━
-  ๏ ** ᴅᴇᴠᴇʟᴏᴘᴇʀ :** [ᴡɪʟᴅᴀɴ](tg://user?id=5779185981)
+  ๏ ** ᴅᴇᴠᴇʟᴏᴘᴇʀ :** [ᴅᴀɴ](tg://user?id=5779185981)
   
   ๏ ** ꜱᴛᴏʀᴇ :** [ꜱᴛᴏʀᴇ](https://t.me/Disney_storeDan)
    ━━━━━━━━━━━━━━━━━━━""",
