@@ -1,6 +1,6 @@
 <h1 align="center">ᴡɪʟᴅᴀɴ ꝛσʙσᴛ</h1>
 <p align="center">
-  <img src="https://telegra.ph//file/6bb981dc9d93a62f0186a.jpg">
+  <img src="https://telegra.ph//file/2c1dd1f29fca1670d134e.jpg">
 </p>
 <p align="center">
 <a href="https://github.com/bebekk2024/MukeshRobot/stargazers"><img src="https://img.shields.io/github/stars/Noob-Mukesh/MukeshRobot?color=black&logo=github&logoColor=black&style=for-the-badge" alt="Stars" /></a>
@@ -56,7 +56,7 @@
 - Install pip by :
 `sudo pip3 install -U pip`
 - Clone the repository by :
-`git clone https://github.com/Muhamadwildan018/MukeshRobot && cd MukeshRobot`
+`git clone https://github.com/bebekk2024/MukeshRobot && cd MukeshRobot`
 - Install/Upgrade setuptools by :
 `pip3 install --upgrade pip setuptools`
 - Install requirements by :
@@ -76,7 +76,7 @@ Press `Ctrl+C` when you're done with editing config and `:wq` to save the config
 Press `Ctrl+b` and then `d`
 
 <p align="center">
-  <img src="https://telegra.ph//file/6bb981dc9d93a62f0186a.jpg">
+  <img src="[https://telegra.ph//file/6bb981dc9d93a62f0186a.jpg](https://telegra.ph//file/2c1dd1f29fca1670d134e.jpg)">
 </p>
 
 
@@ -102,13 +102,13 @@ __help__ = "Module help message"
 
 @mukesh.on_message(filters.command("start"))
 async def some_function(_, message):
-    await message.reply_text("ᴡɪʟᴅᴀɴ ᴀʟɪᴠᴇ ʙᴀʙʏ❣️!!")
+    await message.reply_text("ɢʀᴇᴀᴛ ᴀʟɪᴠᴇ ʙᴀʙʏ❣️!!")
 
-# ᴍᴀɴʏ ᴜsᴇғᴜʟ ғᴜɴᴄᴛɪᴏɴs ᴀʀᴇ ɪɴ, Wildanrobot/utils/,Wildannrobot, and Wildanrobot/modules/
+# ᴍᴀɴʏ ᴜsᴇғᴜʟ ғᴜɴᴄᴛɪᴏɴs ᴀʀᴇ ɪɴ, greatrobot/utils/,greatrobot, and greatrobot/modules/
 ```
 
 <h3 align="center"> 
- ᴀɴᴅ ᴘᴜᴛ ᴛʜɪs ғɪʟᴇ ɪɴ Wildan/modules/, ʀᴇsᴛᴀʀᴛ ᴀɴᴅ ᴛᴇsᴛ ʏᴏᴜʀ ʙᴏᴛ.
+ ᴀɴᴅ ᴘᴜᴛ ᴛʜɪs ғɪʟᴇ ɪɴ great/modules/, ʀᴇsᴛᴀʀᴛ ᴀɴᴅ ᴛᴇsᴛ ʏᴏᴜʀ ʙᴏᴛ.
 </h3>
 
 ━━━━━━━━━━━━━━━━━━━━
