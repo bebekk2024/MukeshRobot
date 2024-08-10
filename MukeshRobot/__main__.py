@@ -609,14 +609,14 @@ def Source_about_callback(update: Update, context: CallbackContext):
 2.ᴛᴀɴʏᴀᴋᴀɴ ꜱᴛᴏᴄᴋ ᴋᴇᴘᴀᴅᴀ ᴀᴅᴍɪɴ ꜱᴇʙᴇʟᴜᴍ ᴍᴇᴍʙᴇʟɪ
 3.ᴊɪᴋᴀ ɪɴɢɪɴ ᴍᴇᴍʙᴇʟɪ ʜᴜʙ ᴀᴅᴍɪɴ ᴅɪʙᴀᴡᴀʜ ɪɴɪ.
 
-© 2023 - 2024 | [sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ](https://t.me/musik_supportdan}), ᴀʟʟ ʀɪɢʜᴛs ʀᴇsᴇʀᴠᴇᴅ.
+© 2023 - 2024 | [sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ](https://t.me/musik_supportdan), ᴀʟʟ ʀɪɢʜᴛs ʀᴇsᴇʀᴠᴇᴅ.
 """,
             parse_mode=ParseMode.MARKDOWN,
             
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="• ᴅᴀɴ", url=f"tg://user?id={5779185981"),
+                        InlineKeyboardButton(text="• ᴅᴀɴ", url=f"tg://user?id={5779185981}"),
                         InlineKeyboardButton(text="• ᴅᴀɴ", url=f"https://t.me/mhmdwldnnnn")
                     ],
                     [
