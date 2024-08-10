@@ -429,7 +429,7 @@ def Mukesh_about_callback(update: Update, context: CallbackContext):
 def MukeshRobot_Main_Callback(update: Update, context: CallbackContext):
     query = update.callback_query
     if query.data == "Main_help":
-        query.message.edit_caption(f"""*✮ Kalo Kalean Mau Ngambil String di bot {@danasiten_bot} String Pyrogram, Pyrogram v2, atau Telethon kalian klik aja* 
+        query.message.edit_caption(f"""*✮ Kalo Kalean Mau Ngambil String di bot @danasiten_bot String Pyrogram, Pyrogram v2, atau Telethon kalian klik aja* 
         /genstring .""",
             parse_mode=ParseMode.MARKDOWN,
             
@@ -451,7 +451,7 @@ Untuk List Userbot Premium DISNEY STORE bisa kalian cek list di bawah ini :
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="• ᴅᴀɴ", url=f"tg://user?id={5779185981"),
+                        InlineKeyboardButton(text="• ᴅᴀɴ", url=f"tg://user?id={5779185981}"),
                     ],
                     [
                     InlineKeyboardButton(text="ᴜʙᴏᴛ ꜱᴘᴇꜱɪᴀʟ ɪɪ", url="https://t.me/mhmdwldnnnn_bot",
@@ -501,7 +501,7 @@ Untuk List Userbot Premium DISNEY STORE bisa kalian cek list di bawah ini :
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="• ᴅᴀɴ", url=f"tg://user?id={5779185981"),
+                        InlineKeyboardButton(text="• ᴅᴀɴ", url=f"tg://user?id={5779185981}"),
                         InlineKeyboardButton(text="• ᴅᴀɴ", url=f"https://t.me/mhmdwldnnnn")
                     ],
                     [
@@ -616,7 +616,7 @@ def Source_about_callback(update: Update, context: CallbackContext):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="• ᴅᴀɴ", url=f"tg://user?id={5779185981"),
+                        InlineKeyboardButton(text="• ᴅᴀɴ", url=f"tg://user?id={5779185981}"),
                         InlineKeyboardButton(text="• ᴅᴀɴ", url=f"https://t.me/mhmdwldnnnn")
                     ],
                     [
@@ -649,7 +649,7 @@ Silahkan Klik Button Di Bawah..*
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-        InlineKeyboardButton(text="ᴅᴀɴ", url=f"tg://user?id={5779185981"),
+        InlineKeyboardButton(text="ᴅᴀɴ", url=f"tg://user?id={5779185981}"),
                     ],
                     [
         InlineKeyboardButton(text="ᴜʙᴏᴛ ᴘʀᴇᴍɪᴜᴍ", callback_data="Music_admin"),
@@ -675,7 +675,7 @@ Untuk List Userbot Premium DISNEY STORE bisa kalian cek list di bawah ini :*
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="• ᴅᴀɴ", url=f"tg://user?id={5779185981"),
+                        InlineKeyboardButton(text="• ᴅᴀɴ", url=f"tg://user?id={5779185981}"),
                     ],
                     [
                     InlineKeyboardButton(text="ᴜʙᴏᴛ ꜱᴘᴇꜱɪᴀʟ ɪɪ", url="https://t.me/mhmdwldnnnn_bot",
