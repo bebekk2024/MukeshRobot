@@ -23,7 +23,7 @@ async def must_join_channel(bot: Client, msg: Message):
                     f"Join Dulu Kampang Baru Pencet /start Lagi !!",
                 
                     reply_markup=InlineKeyboardMarkup([
-                        [InlineKeyboardButton("Masuk sini nyet, Jangan Lupa Salam", url=link)]
+                        [InlineKeyboardButton("Masuk sini nyet, Jangan Lupa Salam", url="https://t.me/Disney_storeDan")]
                     ])
                 )
                 await msg.stop_propagation()
