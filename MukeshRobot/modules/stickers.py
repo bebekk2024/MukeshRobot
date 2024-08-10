@@ -6,7 +6,7 @@ import textwrap
 from html import escape
 from urllib.parse import quote as urlquote
 
-import cv2
+#import cv2
 import ffmpeg
 from bs4 import BeautifulSoup
 from cloudscraper import CloudScraper
