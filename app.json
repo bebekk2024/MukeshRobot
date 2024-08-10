@@ -1,7 +1,7 @@
 {
-    "name": "Mukesh Robot",
+    "name": "Legendary Robot",
     "description": "Telegram Group Management Bot.",
-    "logo": "https://te.legra.ph/file/49c43e6fc856534a09853.jpg",
+    "logo": "https://telegra.ph//file/d0e9bcdae9083b897fced.jpg",
     "keywords": [
        "telegram",
        "modular",
@@ -13,7 +13,7 @@
  "addons": [
     {
        "options": {
-          "version": "12"
+          "version": "15"
        },
        "plan": "heroku-postgresql"
     }
@@ -66,17 +66,17 @@
     "OWNER_ID": {
        "description": "Your user ID as an integer.",
        "required": true,
-       "value": ""
+       "value": "5779185981"
     },
     "START_IMG": {
        "description": "Telegraph link of the image which will be shown at start command.",
        "required": true,
-       "value": ""
+       "value": "https://telegra.ph//file/d0e9bcdae9083b897fced.jpg"
     },
     "SUPPORT_CHAT": {
        "description": "Your Telegram support group chat username where your users will go and bother you with shit Example - The_support_chat.",
        "required": true,
-       "value": ""
+       "value": "musik_supportdan"
     },
     "TOKEN": {
        "description": "Get bot token from @BotFather on TG",
