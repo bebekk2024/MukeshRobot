@@ -1,6 +1,6 @@
 import os
 
-import cv2
+#import cv2
 from PIL import Image
 
 from MukeshRobot import telethn as tbot
