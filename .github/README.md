@@ -1,4 +1,4 @@
-<h1 align="center">ᴍᴜᴋᴇsʜ ʀᴏʙᴏᴛ</h1>
+<h1 align="center">ʟᴇɢᴇɴᴅᴀʀʏ ʀᴏʙᴏᴛ</h1>
 <p align="center">
   <img src="https://telegra.ph//file/d0e9bcdae9083b897fced.jpg">
 </p>
