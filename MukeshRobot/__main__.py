@@ -616,7 +616,7 @@ def Source_about_callback(update: Update, context: CallbackContext):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="• ᴅᴀɴ", url=f"tg://user?id={5779185981}"),
+                        InlineKeyboardButton(text="• ᴅᴀɴ", url=f"tg://user?id={5779185981"),
                         InlineKeyboardButton(text="• ᴅᴀɴ", url=f"https://t.me/mhmdwldnnnn")
                     ],
                     [
