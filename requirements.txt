@@ -26,6 +26,7 @@ markdown2==2.4.12
 motor==3.3.2
 pymongo==4.6.3
 opencv-python-headless==4.8.1.78
+numpy>=1.23,<2.0
 pillow==10.1.0
 pretty_errors==1.2.25
 psutil==5.9.7
@@ -46,7 +47,6 @@ telegraph==2.2.0
 telethon==1.33.1
 tgcrypto==1.2.5
 wikipedia==1.4.0
-# update modules extra
 gtts
 heroku3
 alphabet_detector
