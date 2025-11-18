@@ -1,3 +1,4 @@
+import os
 import html
 import re
 from typing import Optional
@@ -18,8 +19,6 @@ from telegram.ext import (
     MessageHandler,
 )
 from telegram.utils.helpers import mention_html
-
-import os
 from openai import OpenAI
 
 import MukeshRobot.modules.sql.chatbot_sql as sql
@@ -27,10 +26,9 @@ from MukeshRobot import BOT_ID, BOT_NAME, BOT_USERNAME, dispatcher
 from MukeshRobot.modules.helper_funcs.chat_status import user_admin, user_admin_no_reply
 from MukeshRobot.modules.log_channel import gloggable
 
-HF_TOKEN = os.environ.get("HF_TOKEN")  # Pakai token HF milikmu!
+HF_TOKEN = os.environ.get("HF_TOKEN")  # Token HuggingFace, di-export via terminal
 HF_MODEL = "moonshotai/Kimi-K2-Instruct-0905"
 
-# Inisialisasi klien HuggingFace via OpenAI SDK
 client = OpenAI(
     base_url="https://router.huggingface.co/v1",
     api_key=HF_TOKEN,
@@ -118,7 +116,7 @@ def mukesh_message(context: CallbackContext, message) -> bool:
     return False
 
 def chatbot(update: Update, context: CallbackContext):
-    """Handle pesan chatbot jika aktif."""
+    """Handle pesan chatbot jika aktif dan trigger terpenuhi."""
     message = update.effective_message
     chat_id = update.effective_chat.id
     bot = context.bot
