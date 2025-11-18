@@ -234,7 +234,7 @@ def start(update: Update, context: CallbackContext):
     else:
         update.effective_message.reply_photo(
             START_IMG,
-            caption="ʟᴇɢᴇɴᴅᴀʀʏ ɪᴅᴜᴘ ᴋᴏᴋ ᴍᴇᴋ  !\n<b>ɢᴡ ɢᴀ ᴛɪᴅᴜʀ ᴅᴀʀɪ​:</b> <code>{}</code>".format(
+            caption="ᴄᴀᴘʀɪᴄᴏʀɴ ɪᴅᴜᴘ ᴋᴏᴋ ᴍᴇᴋ  !\n<b>ɢᴡ ɢᴀ ᴛɪᴅᴜʀ ᴅᴀʀɪ​:</b> <code>{}</code>".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
@@ -1064,7 +1064,7 @@ def main():
         try:
             dispatcher.bot.send_photo(
                 f"@musik_supportdan",
-                photo=f"https://telegra.ph//file/d0e9bcdae9083b897fced.jpg",
+                photo=f"https://files.catbox.moe/hgtn8x.jpg",
                 caption=f"""
 ✨{BOT_NAME} ɪs ᴀʟɪᴠᴇ ʙᴀʙʏ.
 ━━━━━━━━━━━━━
