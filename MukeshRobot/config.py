@@ -11,7 +11,7 @@ class Config(object):
 
     MUST_JOIN = "Disney_storeDan"
     SUPPORT_CHAT = "musik_supportdan"  # Your own group for support, do not add the @
-    START_IMG = "https://telegra.ph//file/d0e9bcdae9083b897fced.jpg"
+    START_IMG = "https://files.catbox.moe/hgtn8x.jpg"
     EVENT_LOGS = ()  # Prints information like gbans, sudo promotes, AI enabled disable states that may help in debugging and shit
     MONGO_DB_URI= ""
     # RECOMMENDED
