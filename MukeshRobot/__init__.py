@@ -35,7 +35,6 @@ if sys.version_info[0] < 3 or sys.version_info[1] < 6:
 ENV = bool(os.environ.get("ENV", False))
 
 if ENV:
-    # ... [isi parsing env/config sama seperti kode kamu]
     API_ID = int(os.environ.get("API_ID", 0) or 0)
     API_HASH = os.environ.get("API_HASH", "")
     TOKEN = os.environ.get("TOKEN", "")
