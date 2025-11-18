@@ -1,7 +1,10 @@
-import os
 import html
+import json
 import re
+from time import sleep
+import requests
 from typing import Optional
+
 from telegram import (
     CallbackQuery,
     Chat,
@@ -19,20 +22,12 @@ from telegram.ext import (
     MessageHandler,
 )
 from telegram.utils.helpers import mention_html
-from openai import OpenAI
 
 import MukeshRobot.modules.sql.chatbot_sql as sql
 from MukeshRobot import BOT_ID, BOT_NAME, BOT_USERNAME, dispatcher
 from MukeshRobot.modules.helper_funcs.chat_status import user_admin, user_admin_no_reply
 from MukeshRobot.modules.log_channel import gloggable
 
-HF_TOKEN = os.environ.get("HF_TOKEN")  # Token HuggingFace, di-export via terminal
-HF_MODEL = "moonshotai/Kimi-K2-Instruct-0905"
-
-client = OpenAI(
-    base_url="https://router.huggingface.co/v1",
-    api_key=HF_TOKEN,
-)
 
 @user_admin_no_reply
 @gloggable
@@ -42,9 +37,11 @@ def mukeshrm(update: Update, context: CallbackContext) -> str:
     user: Optional[User] = update.effective_user
     match = re.match(r"rm_chat\((.+?)\)", query.data)
     if match:
+        user_id = match.group(1)
         chat: Optional[Chat] = update.effective_chat
         is_mukesh = sql.set_mukesh(chat.id)
         if is_mukesh:
+            is_mukesh = sql.set_mukesh(user_id)
             return (
                 f"<b>{html.escape(chat.title)}:</b>\n"
                 f"AI Disabled\n"
@@ -59,6 +56,7 @@ def mukeshrm(update: Update, context: CallbackContext) -> str:
             )
     return ""
 
+
 @user_admin_no_reply
 @gloggable
 def mukeshadd(update: Update, context: CallbackContext) -> str:
@@ -67,9 +65,11 @@ def mukeshadd(update: Update, context: CallbackContext) -> str:
     user: Optional[User] = update.effective_user
     match = re.match(r"add_chat\((.+?)\)", query.data)
     if match:
+        user_id = match.group(1)
         chat: Optional[Chat] = update.effective_chat
         is_mukesh = sql.rem_mukesh(chat.id)
         if is_mukesh:
+            is_mukesh = sql.rem_mukesh(user_id)
             return (
                 f"<b>{html.escape(chat.title)}:</b>\n"
                 f"AI Enabled\n"
@@ -84,6 +84,7 @@ def mukeshadd(update: Update, context: CallbackContext) -> str:
             )
     return ""
 
+
 @user_admin
 @gloggable
 def mukesh(update: Update, context: CallbackContext):
@@ -91,17 +92,20 @@ def mukesh(update: Update, context: CallbackContext):
     message = update.effective_message
     msg = "• Choose an option to enable/disable chatbot"
     chat_id = update.effective_chat.id
-    keyboard = InlineKeyboardMarkup([
+    keyboard = InlineKeyboardMarkup(
         [
-            InlineKeyboardButton(text="Enable", callback_data=f"add_chat({chat_id})"),
-            InlineKeyboardButton(text="Disable", callback_data=f"rm_chat({chat_id})"),
-        ],
-    ])
+            [
+                InlineKeyboardButton(text="Enable", callback_data=f"add_chat({chat_id})"),
+                InlineKeyboardButton(text="Disable", callback_data=f"rm_chat({chat_id})"),
+            ],
+        ]
+    )
     message.reply_text(
         text=msg,
         reply_markup=keyboard,
         parse_mode=ParseMode.HTML,
     )
+
 
 def mukesh_message(context: CallbackContext, message) -> bool:
     """Cek apakah pesan trigger chatbot."""
@@ -111,12 +115,15 @@ def mukesh_message(context: CallbackContext, message) -> bool:
         return True
     elif BOT_USERNAME.lower() in msg_txt.lower():
         return True
-    elif reply_message and reply_message.from_user and reply_message.from_user.id == BOT_ID:
-        return True
+    elif reply_message:
+        if reply_message.from_user:
+            if reply_message.from_user.id == BOT_ID:
+                return True
     return False
 
+
 def chatbot(update: Update, context: CallbackContext):
-    """Handle pesan chatbot jika aktif dan trigger terpenuhi."""
+    """Handle pesan chatbot jika aktif."""
     message = update.effective_message
     chat_id = update.effective_chat.id
     bot = context.bot
@@ -128,16 +135,21 @@ def chatbot(update: Update, context: CallbackContext):
         if not mukesh_message(context, message):
             return
         bot.send_chat_action(chat_id, action="typing")
+
+        # Perbaiki url, gunakan string format dan encode teks
+        import urllib.parse
+        msg_txt = urllib.parse.quote(message.text)
+        url = f"https://fallenxbot.vercel.app/api/apikey=5935608297-fallen-usbk33kbsu/group-controller/mukesh/message={msg_txt}"
         try:
-            completion = client.chat.completions.create(
-                model=HF_MODEL,
-                messages=[{"role": "user", "content": message.text}],
-            )
-            reply = completion.choices[0].message.content
+            response = requests.get(url, timeout=10)
+            response.raise_for_status()
+            out = response.json()
+            reply = out.get("reply", "No reply from chatbot API.")
         except Exception as e:
-            reply = f"Chatbot AI error: {str(e)}"
+            reply = f"Error from chatbot: {str(e)}"
         message.reply_text(reply)
 
+# Handler fix pattern
 CHATBOTK_HANDLER = CommandHandler("chatbot", mukesh, run_async=True)
 ADD_CHAT_HANDLER = CallbackQueryHandler(mukeshadd, pattern=r"add_chat\(", run_async=True)
 RM_CHAT_HANDLER = CallbackQueryHandler(mukeshrm, pattern=r"rm_chat\(", run_async=True)
