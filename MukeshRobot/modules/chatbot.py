@@ -37,11 +37,9 @@ def mukeshrm(update: Update, context: CallbackContext) -> str:
     user: Optional[User] = update.effective_user
     match = re.match(r"rm_chat\((.+?)\)", query.data)
     if match:
-        user_id = match.group(1)
         chat: Optional[Chat] = update.effective_chat
         is_mukesh = sql.set_mukesh(chat.id)
         if is_mukesh:
-            is_mukesh = sql.set_mukesh(user_id)
             return (
                 f"<b>{html.escape(chat.title)}:</b>\n"
                 f"AI Disabled\n"
@@ -65,11 +63,9 @@ def mukeshadd(update: Update, context: CallbackContext) -> str:
     user: Optional[User] = update.effective_user
     match = re.match(r"add_chat\((.+?)\)", query.data)
     if match:
-        user_id = match.group(1)
         chat: Optional[Chat] = update.effective_chat
         is_mukesh = sql.rem_mukesh(chat.id)
         if is_mukesh:
-            is_mukesh = sql.rem_mukesh(user_id)
             return (
                 f"<b>{html.escape(chat.title)}:</b>\n"
                 f"AI Enabled\n"
@@ -136,15 +132,21 @@ def chatbot(update: Update, context: CallbackContext):
             return
         bot.send_chat_action(chat_id, action="typing")
 
-        # Perbaiki url, gunakan string format dan encode teks
         import urllib.parse
         msg_txt = urllib.parse.quote(message.text)
         url = f"https://fallenxbot.vercel.app/api/apikey=5935608297-fallen-usbk33kbsu/group-controller/mukesh/message={msg_txt}"
+
         try:
             response = requests.get(url, timeout=10)
-            response.raise_for_status()
-            out = response.json()
-            reply = out.get("reply", "No reply from chatbot API.")
+            # Check API status
+            if not response.ok:
+                reply = f"Chatbot API error ({response.status_code}): {response.text}"
+            else:
+                try:
+                    out = response.json()
+                    reply = out.get("reply", "No reply from chatbot API.")
+                except Exception as e:
+                    reply = f"Gagal decode JSON: {str(e)}\nRespon: {response.text}"
         except Exception as e:
             reply = f"Error from chatbot: {str(e)}"
         message.reply_text(reply)
